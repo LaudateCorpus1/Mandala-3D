@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mandala</title>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
-	<script type="text/javascript" src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/js/controls/OrbitControls.js"></script>
+	<title>Mandala 3D</title>
+	<script type="text/javascript" src="js/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/three.js"></script>
+	<script type="text/javascript" src="js/OrbitControls.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class ="container">
-<!-- 		<div class="tools-container dark sheet shadow-big">
-			<div class="tool tool-active dark" id="inside">IN</div>
-			<div class="tool dark" id="outside">OUT</div>
-			<div class="tool dark" id="isometric">ISO</div>
-			<div class="tool dark" id="axial">AXI</div>
-		</div> -->
-
-		<div id="canvas-container" class="shadow-big" >
-			<div id="canvas" ></div>
+	<div id="options">
+		<div id="views">
+			<ul>
+				<li class="option active" id="axial">AXIAL</li>
+				<li class="option" id="isometric">ISO</li>
+			</ul>
+		</div>
+		<div id="direction">
+			<ul>
+				<li class="option" id="inside">IN</li>
+				<li class="option active" id="outside">OUT</li>
+			</ul>
 		</div>
 	</div>
+	<div id="start-drawing"><h1 class="blink">start drawing!</h1></div>
+	<a href="https://github.com/arturbien">artur bień</a>
+	<div id="canvas" ></div>
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
