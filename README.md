@@ -1,6 +1,9 @@
 # Mandala-3D
 Dynamically drawing 3D Mandala patterns. Made with three.js and GSAP tweenmax.
+### Live demo [HERE](https://arturbien.github.io/Mandala-3D/)
 
-![4](https://user-images.githubusercontent.com/28541613/36128913-fe0abe20-1064-11e8-8f6b-ffe2925ef5d1.png)
-![3](https://user-images.githubusercontent.com/28541613/36128915-01bf89ec-1065-11e8-9004-685bf5f4a70a.png)
-![2](https://user-images.githubusercontent.com/28541613/36128918-043c32c4-1065-11e8-9750-20d8c08c8b77.png)
+![mandala4](https://user-images.githubusercontent.com/28541613/36566522-08fbb7be-1824-11e8-8829-b49c08a73fa2.png)
+![mandala5](https://user-images.githubusercontent.com/28541613/36566523-091fda54-1824-11e8-9241-2297fe33423b.png)
+![mandala2](https://user-images.githubusercontent.com/28541613/36566520-088a1758-1824-11e8-90c6-d61e4953d553.png)
+![mandala3](https://user-images.githubusercontent.com/28541613/36566521-08d74d84-1824-11e8-99c9-324bc82b15a2.png)
+
