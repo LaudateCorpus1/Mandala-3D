@@ -42,15 +42,23 @@ li {
 	cursor: pointer;
 }
 
-a {
+#links {
 	position: absolute;
 	bottom: 50px;
 	right: 50px;
+	text-align: center;
+}
 
-	text-decoration: none;
-	color: #ddd;
+a {
+	display:block;
+	color: #555;
 	font-weight: lighter;
 	font-size: 1.2em;
+}
+a:first-child {
+	color: #ddd;
+	text-decoration: none;
+	margin-bottom: 0.5em;
 }
 
 #start-drawing {
