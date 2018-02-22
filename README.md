@@ -1,5 +1,5 @@
 # Mandala-3D
-Dynamically drawing 3D Mandala patterns. Made with three.js and GSAP tweenmax.
+Dynamically drawing 3D patterns based on Fibonacci sequence. Made with Three.js and GSAP TweenMax.
 ### Live demo [HERE](https://arturbien.github.io/Mandala-3D/)
 
 ![mandala4](https://user-images.githubusercontent.com/28541613/36566522-08fbb7be-1824-11e8-8829-b49c08a73fa2.png)
