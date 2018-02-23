@@ -13,8 +13,8 @@ var colorChangeSpeed = 6;
 var offset = -40;
 var views = {
   'inside':{z:offset},
-  'outside':{z:-offset/3},
-  'isometric':{y:-offset, x: offset/2},
+  'outside':{z:-offset/2},
+  'isometric':{y:-offset/2, x: offset/2},
   'axial':{x:0, y:0}
 }
 
