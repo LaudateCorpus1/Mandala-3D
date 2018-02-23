@@ -5,7 +5,7 @@ var parent = document.getElementById( 'canvas' );
 var parentInfo = parent.getBoundingClientRect();
 var startDrawing = document.getElementById('start-drawing');
 var d = 0;
-var speed = 0.3;
+var speed = 0.1;
 var deleteQueue = [];
 var MAX_POINTS = 500;
 var dragging = false;
@@ -14,7 +14,7 @@ var colorChangeSpeed = 6;
 var offset = -40;
 var views = {
   'inside':{z:offset},
-  'outside':{z:-offset},
+  'outside':{z:-offset/2},
   'isometric':{y:-offset/2, x: offset/2},
   'axial':{x:0, y:0}
 }
