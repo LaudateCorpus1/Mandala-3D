@@ -5,6 +5,7 @@ var parent = document.getElementById( 'canvas' );
 var parentInfo = parent.getBoundingClientRect();
 var startDrawing = document.getElementById('start-drawing');
 var d = 0;
+var speed = 0.15;
 var deleteQueue = [];
 var MAX_POINTS = 500;
 var dragging = false;
@@ -126,7 +127,7 @@ function animate() {
   controls.update();
   render();
   
-  d += 0.2;
+  d += speed;
   scene.position.z = -d;
 }
 
