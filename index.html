@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Mandala 3D</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="author" content="Artur Bien"/>
 	<script type="text/javascript" src="js/TweenMax.min.js"></script>
 	<script type="text/javascript" src="js/three.js"></script>
 	<script type="text/javascript" src="js/OrbitControls.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="options">
-		<div id="views">
-			<ul>
-				<li class="option active" id="axial">AXIAL</li>
-				<li class="option" id="isometric">ISO</li>
-			</ul>
+	<div id="wrapper" class="wrapper">
+		<div id="options">
+			<div id="views">
+				<ul>
+					<li class="option active" id="axial">AXIAL</li>
+					<li class="option" id="isometric">ISO</li>
+				</ul>
+			</div>
+			<div id="direction">
+				<ul>
+					<li class="option active" id="outside">OUT</li>
+					<li class="option" id="inside">IN</li>
+				</ul>
+			</div>
 		</div>
-		<div id="direction">
-			<ul>
-				<li class="option" id="inside">IN</li>
-				<li class="option active" id="outside">OUT</li>
-			</ul>
+		<div id="start-drawing"><h1 class="blink">start drawing!</h1></div>
+		<div id="links">
+			<a href="https://github.com/arturbien" target="_blank">artur bień</a>
+			<a href="https://github.com/arturbien/Mandala-3D" target="_blank">source code</a>
 		</div>
 	</div>
-	<div id="start-drawing"><h1 class="blink">start drawing!</h1></div>
-	<div id="links">
-		<a href="https://github.com/arturbien" target="_blank">artur bień</a>
-		<a href="https://github.com/arturbien/Mandala-3D" target="_blank">source code</a>
-	</div>
-	<div id="canvas" ></div>
 	<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

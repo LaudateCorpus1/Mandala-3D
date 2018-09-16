@@ -1,7 +1,24 @@
+//preventi scrolling on mobile devices
+var windowHeight = window.innerHeight;
+var wrapper = document.getElementById('wrapper');
+
+var a = setInterval(function() {
+  document.scrollTop = -1;
+  resize();
+}, 500);
+var resize = function() {
+  onWindowResize();
+  if(window.innerHeight !== windowHeight) {
+    windowHeight = window.innerHeight;
+    wrapper.style.height = windowHeight;
+  } 
+};
+
+
 var camera, scene, renderer, mouse, controls, drawCount;
 var gradientLength, gradientOffset, gradientOffset2;
 var line, linesGroup, lastPointZ;
-var parent = document.getElementById( 'canvas' );
+var parent = document.getElementById( 'wrapper' );
 var parentInfo = parent.getBoundingClientRect();
 var startDrawing = document.getElementById('start-drawing');
 var d = 0;
@@ -88,7 +105,8 @@ function init() {
     ///////////////////
     // EVENT LISTENERS  //
     ///////////////////
-    parent.addEventListener('mousemove', onDocumentMouseMove, false);
+    parent.addEventListener('mousemove', handleDraw, false);
+    parent.addEventListener('touchmove', handleDraw, false);
     parent.addEventListener('mousedown', function(e){ 
       e.preventDefault();
       if (e.which === 1) {
@@ -97,15 +115,28 @@ function init() {
         toggleStartDrawing();
       }
     });
+    parent.addEventListener('touchstart', function(e){ 
+      newGroup();
+      dragging = true;
+      toggleStartDrawing();
+      
+    });
+
+
     parent.addEventListener('mouseup', function(e) {
       e.preventDefault();
       let lastPointIndex = drawCount >= 500 ? 499 : drawCount-1;
       deleteQueue.push(lastPointZ);
       dragging = false;
     });
-    parent.addEventListener('touchstart', onDocumentTouchStart, false);
+    parent.addEventListener('touchend', function(e) {
+      let lastPointIndex = drawCount >= 500 ? 499 : drawCount-1;
+      deleteQueue.push(lastPointZ);
+      console.log(deleteQueue.length);
+      dragging = false;
+    });
     window.addEventListener( 'resize', onWindowResize, false );
-  
+    // window.addEventListener('orientationchange', onWindowResize, false );
     ///////////////////
     // RENDERER  //
     ///////////////////
@@ -113,7 +144,7 @@ function init() {
     renderer.setClearColor(scene.fog.color);
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
-    parent.appendChild( renderer.domElement );
+    document.body.appendChild( renderer.domElement );
     
     mouse = new THREE.Vector2();
     setView('outside');
@@ -253,18 +284,15 @@ function setView(v){
 
 //  HANDLING EVENTS
 
-function onDocumentTouchStart( event ) {
-  event.preventDefault();
-  event.clientX = event.touches[0].clientX;
-  event.clientY = event.touches[0].clientY;
-}
 
-function onDocumentMouseMove( event ) {
+function handleDraw( event ) {
   event.preventDefault();
-  if (dragging & event.which == 1){
-    mouse.x = ((event.clientX-parentInfo.left)/ renderer.domElement.width ) * 2 - 1;
-    mouse.y = - ((event.clientY-parentInfo.top)/ renderer.domElement.height ) * 2 + 1;
-
+  //checking if user is on mouse drag or touchmove
+  if ((dragging & event.which == 1) || event.touches){
+    let x = event.clientX ? event.clientX: event.touches[0].pageX ;
+    let y = event.clientY ? event.clientY: event.touches[0].pageY ;
+    mouse.x = (x/ window.innerWidth ) * 2 - 1;
+    mouse.y = - (y/ window.innerHeight ) * 2 + 1;
     // DEALING WITH PERSPECTIVE - TRANSLATING MOUSE POS ON SCREEN TO TRUE POINT POSITION ON OFFSET PLANE
     var vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
     vector.unproject( camera );

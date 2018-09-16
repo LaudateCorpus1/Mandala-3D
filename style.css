@@ -2,12 +2,30 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 body {
   overflow: hidden;
   font-family: sans-serif;
 }
-
+body,canvas,html{
+      margin:0;
+      padding:0;
+      border:0;
+      overflow-x:hidden;
+      overflow-y:hidden;
+      width:100%;
+      height:100%;
+    }
+.wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
 #canvas {
 	display: block;
 }
@@ -64,6 +82,8 @@ a:first-child {
 #start-drawing {
 	height: 400px;
 	width: 400px;
+	max-width: 320px;
+	max-height: 320px;
 	border-radius: 50%;
 	border: 2px dashed #555;
 	position: absolute;
@@ -92,4 +112,40 @@ h1 {
 
 @keyframes blinker {  
   50% { opacity: 0; }
+}
+
+@media screen and (max-width:768px) {
+	#options {
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+	#views,
+	#direction {
+		position: absolute;
+		display: inline-block;
+		top: 12px;
+	}
+	#views {
+		left: 12px;
+		border: none;
+	}
+	#views .option {
+		text-align: left;
+	}
+	#direction {
+		right: 12px;
+		padding-top: 0;
+	}
+	#direction .option {
+		text-align: right;
+	}
+	#links {
+		bottom: 12px;
+		right: 12px;
+		text-align: right;
+	}
+	a:first-child {
+		margin-bottom: 0;
+	}
 }
