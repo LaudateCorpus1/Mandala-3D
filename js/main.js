@@ -1,3 +1,11 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(function() {
+      console.log('SW REGISTERED');
+    });
+}
+
+
 //preventi scrolling on mobile devices
 var windowHeight = window.innerHeight;
 var wrapper = document.getElementById('wrapper');
