@@ -1,11 +1,13 @@
 # Mandala-3D
 Dynamically drawing 3D patterns based on Fibonacci sequence. Made with Three.js and GSAP TweenMax.
 
-:point_up_2: Touch devices friendly!
-
-:mobile_phone_off: You can add it to your homescreen and use it when offline.
-
 ### Live demo [HERE](https://arturbien.github.io/Mandala-3D/)
+
+:point_up_2: Touch devices friendly!:mobile_phone_off: You can add it to your homescreen and use it when offline.
+
+
+
+
 
 ![mandala4](https://user-images.githubusercontent.com/28541613/36566522-08fbb7be-1824-11e8-8829-b49c08a73fa2.png)
 ![mandala5](https://user-images.githubusercontent.com/28541613/36566523-091fda54-1824-11e8-9241-2297fe33423b.png)
