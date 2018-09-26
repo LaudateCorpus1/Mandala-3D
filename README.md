@@ -3,7 +3,7 @@ Dynamically drawing 3D patterns based on Fibonacci sequence. Made with Three.js 
 
 ### Live demo [HERE](https://arturbien.github.io/Mandala-3D/)
 
-:point_up_2: Touch devices friendly!:mobile_phone_off: You can add it to your homescreen and use it when offline.
+:point_up_2: Touch devices friendly! :mobile_phone_off: You can add it to your homescreen and use it when offline.
 
 
 
