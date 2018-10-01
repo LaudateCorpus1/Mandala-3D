@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Mandala-3D/sw.js')
+  navigator.serviceWorker.register('/sw.js')
     .then(function() {
       console.log('SW REGISTERED');
     });
