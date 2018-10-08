@@ -1,5 +1,5 @@
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Mandala-3D/sw.js')
+  navigator.serviceWorker.register('/mandala/sw.js')
     .then(function() {
       console.log('SW REGISTERED');
     });
@@ -7,6 +7,7 @@ if ('serviceWorker' in navigator) {
 
 
 //preventi scrolling on mobile devices
+
 var windowHeight = window.innerHeight;
 var wrapper = document.getElementById('wrapper');
 
@@ -43,7 +44,9 @@ var views = {
   'isometric':{y:-offset/2, x: offset/2},
   'axial':{x:0, y:0}
 }
+const colorModes = {
 
+}
 //HTML VIEW OPTIONS BUTTONS
 var inside = document.getElementById('inside');
 var outside = document.getElementById('outside');
@@ -262,7 +265,7 @@ function setProperties() {
   gradientOffset2 = Math.floor(Math.random()*MAX_POINTS);
 }
 
-function setColor(x, y, z, index) {
+function setColor(index) {
   var colorsArr = line.geometry.attributes.color.array;
   colorsArr[ index  ] = map(index +gradientOffset, 255, gradientLength);
   colorsArr[ index +1 ] =255-colorsArr[ index  ];
@@ -311,7 +314,7 @@ function handleDraw( event ) {
     // SETTING POSITION OF THE NEXT POINT
     lastPointZ = camera.position.z-offset+d;
     setPosition( pos.x, pos.y, lastPointZ, drawCount*3);
-    setColor( pos.x, pos.y, camera.position.z-offset+d, drawCount*3);
+    setColor( drawCount*3);
     line.geometry.setDrawRange( 0, drawCount );
     line.geometry.attributes.position.needsUpdate = true;
     line.geometry.attributes.color.needsUpdate = true;

@@ -3,15 +3,15 @@ self.addEventListener('install', function() {
 	caches.open('static')
 		.then(function(cache) {
 			cache.addAll([
-				'/',
-				'/index.html',
-				'/style.css',
-				'/img/icon-96x96.png',
-				'/img/icon-144x144.png',
-				'/js/TweenMax.min.js',
-				'/js/three.js',
-				'/js/OrbitControls.js',
-				'/js/main.js'
+				'/mandala/',
+				'/mandala/index.html',
+				'/mandala/style.css',
+				'/mandala/img/icon-96x96.png',
+				'/mandala/img/icon-144x144.png',
+				'/mandala/js/TweenMax.min.js',
+				'/mandala/js/three.js',
+				'/mandala/js/OrbitControls.js',
+				'/mandala/js/main.js'
 			])
 		});
 });
